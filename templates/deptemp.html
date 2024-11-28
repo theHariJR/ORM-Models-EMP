@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <center style="background-color: black; color: white" >
+        <h1>deptemp</h1>
+        {% for DO in LDEO %}
+                <h1 style="background-color: orange;">{{DO.dname}}</h1>
+            {% for EO in DO.emp_set.all %}
+                <h3>{{EO.ename}}</h3>
+            {% endfor %}
+        {% endfor %}
+    </center> -->
+
+    <center>
+        <h1>deptemp</h1>
+            <table border="3px" width="100%">
+                <thead>
+                    <tr>
+                        <th>Empno</th>
+                        <th>Ename</th>
+                        <th>Sal</th>
+                        <th>Job</th>
+                        <th>Comm</th>
+                        <th>Hiredate</th>
+                        <th>Deptno</th>
+                        <th>Dname</th>
+                        <th>Loc</th>
+                    </tr>
+                </thead>
+                <tbody align="center">
+                    {% for DO in LDEO %}
+                        {% for EO in DO.emp_set.all %}
+                            <tr>
+                                <td>{{EO.empno}}</td>
+                                <td>{{EO.ename}}</td>
+                                <td>{{EO.sal}}</td>
+                                <td>{{EO.job}}</td>
+                                <td>{{EO.comm}}</td>
+                                <td>{{EO.hiredate}}</td>
+                                <td>{{DO.deptno}}</td>
+                                <td>{{DO.dname}}</td>
+                                <td>{{DO.loc}}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+    </center>
+</body>
+</html>
